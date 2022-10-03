@@ -1,0 +1,8 @@
+pip install pipenv
+pipenv shell- For running virtual env.
+
+django-admin startproject -projectname-
+python manage.py runserver- Run a server
+
+python -m pip freeze > requirements.txt
+
