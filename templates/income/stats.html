@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="">Income Summary</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+           Summary
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    
+
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="card card-chart">
+        <div class="card-header">
+          <h5 class="title card-header-warning">Today<i class="fa fa-users"></i>
+              <span id='today_count' style="
+              float: right;
+              ">Some Value</span>
+          </h5>                
+              
+
+          <h3 class="card-title mt-3" id='today_exp' style="margin-left: 20px;">
+            <i class='fas fa-dollar-sign'></i>
+          </h3>
+        
+        </div> 
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="card card-chart">
+        <div class="card-header">
+          <h5 class="title card-header-success">This Week<i class="fa fa-building"></i>
+            <span id='week_count' style="
+              float: right;
+              ">Some Value</span>
+          </h5>
+                          <h3 class="card-title mt-3" id='week_exp' style="margin-left: 20px;">
+                            <i class='fas fa-dollar-sign'></i>
+                          </h3>
+                        </div>
+        
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="card card-chart">
+        <div class="card-header">
+          <h5 class="title card-header-rose">This Month<i class="fa fa-user"></i>
+            <span id='month_count' style="
+              float: right;
+              ">Some Value</span>
+          </h5>
+                          <h3 class="card-title mt-3" id='month_exp' style="margin-left: 20px;">
+                            <i class='fas fa-dollar-sign'></i>
+                          </h3>
+                        </div>
+       
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="card card-chart">
+        <div class="card-header">
+          <h5 class="title card-header-info">This Year<i class="fa fa-users"></i>
+            <span id='year_count' style="
+            float: right;
+            ">Some Value</span></h5>
+            
+                              
+              
+          <h3 class="card-title mt-3" id='year_exp' style="margin-left: 20px;">
+            <i class='fas fa-dollar-sign'></i>
+          </h3>
+        </div>
+      </div>
+
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-5">
+     <canvas id="month_chart" width="400" height="400"></canvas>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+          <canvas id="year_chart" width="400" height="400"></canvas>
+        </div>
+  </div>
+
+<script src="{% static 'js/incomecharts.js' %}"></script>
+
+</script>
+
+{% endblock content %}

@@ -11,6 +11,9 @@ gunicorn = "*"
 waitress = "*"
 whitenoise = "*"
 dj-database-url = "*"
+validate-email = "*"
+six = "*"
+pandas = "*"
 
 [dev-packages]
 

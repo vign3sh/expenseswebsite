@@ -1,8 +1,24 @@
 pip install pipenv
 pipenv shell- For running virtual env.
 
-django-admin startproject -projectname-
-python manage.py runserver- Run a server
-
 python -m pip freeze > requirements.txt
 
+source .env- To reload .env Variables
+
+django-admin startproject -projectname-
+python manage.py startapp -appname-
+python manage.py runserver- Run a server
+
+#To move migratrions:-
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py collectstatic - To refresh css files
+
+python manage.py shell - To get data directly
+    from django.contrib.auth.models import User
+    
+    User.objects.all().delete()
+    
+    user=User.objects.get(username='vsvs')
+    user.is_active

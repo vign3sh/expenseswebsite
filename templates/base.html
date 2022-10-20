@@ -8,12 +8,15 @@
 
  
 
-    
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
    <!-- Bootstrap core CSS -->   
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet"/>
 <link href="{% static 'css/main.css'%}" rel="stylesheet"/>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="{% static 'css/card.css'%}" rel="stylesheet"/>
 
 
     
@@ -27,10 +30,23 @@
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
-  <div class="navbar-nav">
-    <div class="nav-item text-nowrap">
-      <a class="nav-link px-3" href="#">Sign out</a>
+
+  <div class="navbar-nav px-3"
+  style="display: flex; flex-direction: row; align-items: center;">
+  <div class="nav-item text-nowrap">
+      <span class="nav-link" href="">
+            ({{request.user.username}})
+          </span>
+    </div>
+    <div class="nav-item text-nowrap mt-3" style="margin-left: 5px;">
+      <form action="{% url  'logout' %}" method="POST">
+            {% csrf_token %}
+            <input
+              class="text text-capitalize"
+              type="submit"
+              value="Sign out"
+            />
+      </form>
     </div>
   </div>
 </header>
@@ -50,9 +66,9 @@
   </div>
 </div>
 
-
+    
     <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" ></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" ></script>
     <script src="{% static 'js/main.js' %}"></script>
   
 </body>
