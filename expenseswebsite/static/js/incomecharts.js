@@ -75,8 +75,8 @@ function make_dashboard(){
           Object.values(year_data),
         ];
   
-      renderChart('month_chart',data, labels, month_label, "Monthly Expense", "rgba(255, 99, 132, 0.2)","rgba(255, 99, 132, 1)");
-      renderChart('year_chart',y_data,y_labels, year_label,"Yearly Expense", "rgba(75, 192, 192, 0.2)","rgba(75, 192, 192, 1)");
+      renderChart('month_chart',data, labels, month_label, "Monthly Income", "rgba(255, 99, 132, 0.2)","rgba(255, 99, 132, 1)");
+      renderChart('year_chart',y_data,y_labels, year_label,"Yearly Income", "rgba(75, 192, 192, 0.2)","rgba(75, 192, 192, 1)");
   
       });
   };
