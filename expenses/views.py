@@ -236,7 +236,7 @@ def expense_dashboard(request):
 
 
 def expense_summary(request):
-    MONTHS=['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] 
+    MONTHS=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'] 
     todays_date = datetime.date.today()
     year = todays_date.year
     month = todays_date.month
