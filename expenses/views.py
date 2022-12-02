@@ -181,7 +181,7 @@ def expense_category_summary2(request):
         res=[]
         filtered_by_category =expenses.filter(category=y)
         month_list=[]
-        while year <= todays_date.year and month <= todays_date.month:
+        while year < todays_date.year or year == todays_date.year and month <= todays_date.month:
             month_list.append(MONTHS[month-1])
             res.append(
                 get_month_expense(filtered_by_category,month,year)

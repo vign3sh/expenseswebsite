@@ -1,3 +1,8 @@
+Instruction to run:
+1) cd expenseswebsite/
+2) pipenv shell
+3) python manage.py runserver
+
 pip install pipenv
 pipenv shell- For running virtual env.
 
