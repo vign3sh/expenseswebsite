@@ -46,6 +46,7 @@ function make_dashboard(){
         ],
       },
       options: {
+        maintainAspectRatio: false,
         plugins: {
         title: {
           display: true,
