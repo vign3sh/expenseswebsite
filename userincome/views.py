@@ -132,6 +132,7 @@ def income_category_summary(request):
     def get_category(expense):
         return expense.source
     category_list = list(set(map(get_category, expenses)))
+    print(category_list)
     category_list.sort()
 
     def get_expense_category_amount(category):
@@ -180,7 +181,7 @@ def income_category_summary2(request):
         res=[]
         filtered_by_category =expenses.filter(source=y)
         month_list=[]
-        while year <= todays_date.year and month <= todays_date.month:
+        while year < todays_date.year or year == todays_date.year and month <= todays_date.month:
             month_list.append(MONTHS[month-1])
             res.append(
                 get_month_expense(filtered_by_category,month,year)
