@@ -46,6 +46,7 @@ const renderChart = (chart_name,data, labels, legend, title, backc, borc) => {
       ],
     },
     options: {
+      maintainAspectRatio: false,
       plugins: {
       title: {
         display: true,

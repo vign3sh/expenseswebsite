@@ -1,6 +1,6 @@
 const renderChart = (data, labels) => {
     var ctx = document.getElementById("donutchart").getContext("2d");
-    var myChart = new Chart(ctx, {
+    myCharts =  new Chart(ctx, {
       type: "doughnut",
       data: {
         labels: labels,
@@ -29,6 +29,7 @@ const renderChart = (data, labels) => {
         ],
       },
       options: {
+        maintainAspectRatio: false,
         plugins: {
         title: {
           display: true,
@@ -56,6 +57,8 @@ const renderChart = (data, labels) => {
   };
   
   const renderChart2 = (data, labels, months) => {
+
+
     var speedCanvas = document.getElementById("linechart");
     
   
@@ -100,6 +103,7 @@ const renderChart = (data, labels) => {
     
     var chartOptions = {
       responsive: true,
+      maintainAspectRatio: false,
       interaction: {
         mode: 'index',
         intersect: false,
@@ -113,7 +117,7 @@ const renderChart = (data, labels) => {
       }
     };
     
-    var lineChart = new Chart(speedCanvas, {
+    lineChart = new Chart(speedCanvas, {
       type: 'line',
       data: monthly_data,
       options: chartOptions

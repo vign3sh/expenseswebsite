@@ -29,6 +29,7 @@ const renderChart = (data, labels) => {
       ],
     },
     options: {
+      maintainAspectRatio: false,
       plugins: {
       title: {
         display: true,
@@ -100,6 +101,7 @@ const renderChart2 = (data, labels, months) => {
   
   var chartOptions = {
     responsive: true,
+    maintainAspectRatio: false,
     interaction: {
       mode: 'index',
       intersect: false,
