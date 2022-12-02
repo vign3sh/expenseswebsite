@@ -6,7 +6,6 @@ const renderChart = (data, labels) => {
       labels: labels,
       datasets: [
         {
-          label: "Last 6 months expenses",
           data: data,
           backgroundColor: [
             "rgba(255, 99, 132, 0.2)",
