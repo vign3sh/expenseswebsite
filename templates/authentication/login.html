@@ -1,60 +1,108 @@
-{% extends 'base_auth.html' %}
 {% load static %}
+<html lang="en">
+<head>
+	<title>TrulyExpenses {% block title %}
+        {% endblock title %}   
+    </title>
 
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Old Imports-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+	<link rel="stylesheet"  href="{% static 'css/bootstrap.min.css'%}?{% now 'U' %}">
+	<link href="{% static 'css/main.css'%}" rel="stylesheet">
+	
+		<!-- Custom styles for this template -->
+		<link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
+    <!-- end Old Imports-->
+<!--===============================================================================================-->	
+	
 
-{% block content %}
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main1.css' %}">
+<!--===============================================================================================-->
+</head>
+<body style="background-color: #666666;">
+	{% block content %}
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+                <form class="login100-form validate-form" action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
 
-<div class="row">
-  <div class="col-md-4"></div>
-  <div class="col-md-4">
-    <div class="card mt-5">
+                    {% include 'partials/_messages.html' %}
+					<span class="login100-form-title p-b-43">
+						Login to continue
+					</span>
+					
+					
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="text" name="username"id="usernameField" list="user_name" />
+						<span class="focus-input100"></span>
+						<span class="label-input100">Username:(vsvs)</span>
+						
+            			<datalist id="user_name">
+							<option value="vsvs">vsvs</option>
+						</datalist>
+						
+					</div>
+					
+					
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input type="password" name="password" class="input100" id="passwordField"/>
+						<span class="focus-input100"></span>
+						<span class="label-input100">Password:(vsvsvs)</span>
+						
+					</div>
 
+					<div class="flex-sb-m w-full p-t-3 p-b-32">
+						<div class="contact100-form-checkbox">
+							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+							<label class="label-checkbox100" for="ckb1">
+								Remember me
+							</label>
+						</div>
 
-      <div class="card-body">
-        <div class="card-title py-3">
-          <h4>Login to your  account</h4>
-        </div>
-        <form action="{% url 'login' %}" method="post">
-          {% csrf_token %}
+						<div>
+							<a class="txt1" href="{% url 'request-password' %}">Reset Password</a>
+						</div>
+					</div>
+			
 
-          {% include 'partials/_messages.html' %}
-          <div class="form-group">
-            <input
-              type="text"
-              name="username"
-              placeholder="username"
-              id="usernameField"
-              value="vsvs"
-              class="form-control form-control-sm"
-            />
-          </div>
-          <div class="form-group">
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              class="form-control form-control-sm"
-              value="vsvsvs"
-              id="passwordField"
-            />
-          </div>
-          <input type="submit" value="Login" class="btn w100  btn-primary login-btn" />
-        </form>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+					
+					<div class="text-center p-t-46 p-b-20">
+						<span class="txt2">
+						<a href="{% url 'register' %}">Register</a>
+						</span>
+					</div>
 
-        <div class="container">
-          <span class="text-lead lead">Don't have an account? </span><a href="{% url 'register' %}">Register</a><br>
-        <span class="text-lead lead">Forgot password? </span><a href="{% url 'request-password' %}">Reset Password</a>
-        </div>
-      </div>
+				</form>
 
-      
-      
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4"></div>
-</div>
+				<div class="login100-more" style="background-image: url('/static/images/19198913.jpg');">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
 
-<script src="{% static 'js/register.js' %}"></script>
+	
+	<!--Old Imports-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.4/static/js/vendor/jquery.slim.min.js"><\/script>')</script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    <!-- end Old Imports-->
 
-{% endblock content %}
+	<script src="{% static 'js/main1.js' %}"></script>
+	{% endblock content %}
+</body>
+</html>

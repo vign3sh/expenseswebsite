@@ -2,6 +2,7 @@ Instruction to run:
 1) cd expenseswebsite/
 2) pipenv shell
 3) python manage.py runserver
+4) python manage.py collectstatic - To refresh css files
 
 pip install pipenv
 pipenv shell- For running virtual env.
